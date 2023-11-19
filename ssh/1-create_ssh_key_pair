@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script creates an RSA key pair with the name "school", 4096 bits, and passphrase "betty"
+
+# Define the filename for the private key
+private_key_file="school"
+
+# Create the RSA key pair
+ssh-keygen -t rsa -b 4096 -f "$private_key_file" -N "betty"
+
+# Provide information to the user
+echo -e "\nRSA key pair created successfully."
+echo "Private key saved to: $private_key_file"
+echo "Remember to keep your passphrase secure."
