@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Configures an Nginx server so that /redirect_me redirects to another page.
+# Bash script configures an Nginx server so that /redirect_me redirects to another page.
 # The redirection is configured as a "301 Moved Permanently"
 
 apt-get update
@@ -14,9 +14,12 @@ printf %s "server {
     root   /etc/nginx/html;
     index  index.html index.htm;
 
+    location / {
+	try_files \$uri \$uri/ =404;
+    }
     location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=hDKCxebp88A;
+        return 301 https://www.youtube.com/watch?v=7VAI73roXaY&list=PPSV;
     }
 }" > /etc/nginx/sites-available/default
 
-service nginx restart
+service nginx restart
