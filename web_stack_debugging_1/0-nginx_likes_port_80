@@ -12,4 +12,4 @@ ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
 # Make script return a webpage and header
-curl -i localhost
+curl -i 0:80
