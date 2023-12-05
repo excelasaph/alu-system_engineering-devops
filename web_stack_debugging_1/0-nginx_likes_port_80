@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Remove previous default file from 
+# /etc/nginx/sites-enabled
+rm /etc/nginx/sites-enabled/default
+
+# Create a symbolink lineked default
+# file  between /etc/nginx/sites-available and 
+# /etc/nginx/sites-enabled
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Restart Nginx
+sudo service nginx restart
+
+# Make script return a webpage and header
+curl -i localhost
